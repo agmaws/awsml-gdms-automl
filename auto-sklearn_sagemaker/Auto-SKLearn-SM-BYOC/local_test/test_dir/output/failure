@@ -1,0 +1,19 @@
+Exception during training: Input Column Int'l Plan has invalid type object. Cast it to a valid dtype before using it in Auto-Sklearn. Valid types are numerical, categorical or boolean. You can cast it to a valid dtype using pandas.Series.astype .If working with string objects, the following tutorial illustrates how to work with text data: https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html
+Traceback (most recent call last):
+  File "/opt/program/train", line 65, in train
+    automl.fit(X_train, y_train)
+  File "/venv/lib/python3.8/site-packages/autosklearn/estimators.py", line 941, in fit
+    super().fit(
+  File "/venv/lib/python3.8/site-packages/autosklearn/estimators.py", line 340, in fit
+    self.automl_.fit(load_models=self.load_models, **kwargs)
+  File "/venv/lib/python3.8/site-packages/autosklearn/automl.py", line 1655, in fit
+    return super().fit(
+  File "/venv/lib/python3.8/site-packages/autosklearn/automl.py", line 467, in fit
+    self.InputValidator.fit(X_train=X, y_train=y, X_test=X_test, y_test=y_test)
+  File "/venv/lib/python3.8/site-packages/autosklearn/data/validation.py", line 118, in fit
+    self.feature_validator.fit(X_train, X_test)
+  File "/venv/lib/python3.8/site-packages/autosklearn/data/feature_validator.py", line 120, in fit
+    self.feat_type = self.get_feat_type_from_columns(X_train)
+  File "/venv/lib/python3.8/site-packages/autosklearn/data/feature_validator.py", line 301, in get_feat_type_from_columns
+    raise ValueError(
+ValueError: Input Column Int'l Plan has invalid type object. Cast it to a valid dtype before using it in Auto-Sklearn. Valid types are numerical, categorical or boolean. You can cast it to a valid dtype using pandas.Series.astype .If working with string objects, the following tutorial illustrates how to work with text data: https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html
